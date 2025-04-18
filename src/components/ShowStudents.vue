@@ -31,12 +31,12 @@
                     </button>
                 </div>
                 <div v-if="expanded[index]" class="mt-3 text-sm" style="font-family: 'Times New Roman', Times, serif;">
-                    <p><strong>Nama:</strong> {{ student.name }}</p>
-                    <p><strong>Debitur:</strong> {{ student.debitur }}</p>
-                    <p><strong>Sertipikat:</strong> {{ student.sertipikat }}</p>
-                    <p><strong>IMB:</strong> {{ student.imb }}</p>
-                    <p><strong>Penerima:</strong> {{ student.penerima }}</p>
-                    <p><strong>Tanggal Dibuat:</strong> {{ student.created_at }}</p>
+                    <p><strong>Nama :</strong> {{ student.name }}</p>
+                    <p><strong>Debitur :</strong> {{ student.debitur }}</p>
+                    <p><strong>Sertipikat :</strong> {{ student.sertipikat }}</p>
+                    <p><strong>IMB :</strong> {{ student.imb }}</p>
+                    <p><strong>Penerima :</strong> {{ student.penerima }}</p>
+                    <p><strong>Tanggal Dibuat :</strong> {{ student.created_at }}</p>
                     <div class="mt-3 flex space-x-2">
                         <blue-button class="px-4 py-2 text-sm min-h-[44px]" @click="editStudent(student)">Edit</blue-button>
                         <red-button class="px-4 py-2 text-sm min-h-[44px]" @click="deleteStudent(student.sertipikat)">Hapus</red-button>
