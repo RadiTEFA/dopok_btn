@@ -28,7 +28,7 @@
             </select>
             <warning-message v-if="isPenerima" class="mt-1 text-sm text-red-600">{{ PenerimaMessage }}</warning-message>
         </div>
-        <blue-button class="w-full py-3 text-base sm:w-auto sm:px-6 sm:py-2 min-h-[44px]">Simpan</blue-button>
+        <blue-button class="w-full py-3 text-base sm:w-auto sm:px-6 sm:py-2 min-h-[44px]">SIMPAN</blue-button>
     </form>
 
     <teleport to="body">
@@ -36,7 +36,7 @@
             <template v-slot:title>Informasi</template>
             <template v-slot:message>{{ message }}</template>
             <template v-slot:buttons>
-                <blue-button @click="closeConfirmDialog" class="w-full py-3 text-base min-h-[44px]">Tutup</blue-button>
+                <blue-button @click="closeConfirmDialog" class="w-full py-3 text-base min-h-[44px]">TUTUP</blue-button>
             </template>
         </confirm-dialog>
     </teleport>
