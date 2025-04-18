@@ -1,6 +1,6 @@
 <template>
     <title-page>DATA PENYERAHAN DOKUMEN POKOK</title-page>
-    <div class="mx-auto max-w-full px-4 sm:px-6">
+    <div class="container-fluid mx-auto max-w-full px-4 sm:px-6">
         <!-- Search Input with Icon -->
         <div class="mb-6">
             <label for="search" class="block my-2 text-sm sm:text-base font-medium">Cari Dokumen</label>
@@ -25,7 +25,7 @@
         <div class="block sm:hidden space-y-4">
             <div v-for="(student, index) in filteredStudents" :key="student.sertipikat" class="border rounded-lg shadow-md p-4 bg-white">
                 <div class="flex justify-between items-center">
-                    <div class="font-semibold text-base">Dokumen #{{ index + 1 }}</div>
+                    <div class="font-semibold text-base">{{ students.name }}</div>
                     <button @click="toggleDetails(index)" class="text-blue-600 text-sm">
                         {{ expanded[index] ? 'Sembunyikan' : 'Tampilkan' }}
                     </button>
