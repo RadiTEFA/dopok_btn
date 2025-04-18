@@ -1,6 +1,6 @@
 <template>
     <title-page>DATA PENYERAHAN DOKUMEN POKOK</title-page>
-    <div class="container-fluid mx-auto max-w-full px-4 sm:px-6">
+    <div class="mx-auto max-w-full px-4 sm:px-6">
         <!-- Search Input with Icon -->
         <div class="mb-6">
             <label for="search" class="block my-2 text-sm sm:text-base font-medium">Cari Dokumen</label>
