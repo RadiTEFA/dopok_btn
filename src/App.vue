@@ -1,9 +1,9 @@
 <template>
     <header class="w-screen bg-red-100 px-2 py-2 grid grid-cols-2">
         <div>
-            <img src="./assets/img/logo-btn-1.png" alt="" height="75px" width="75px">
+            <img src="./assets/img/logo-btn-1.png" alt="" height="80px" width="80px">
         </div>
-        <div class="pt-5">
+        <div class="flex justify-center items-center gap-2">
             <menu-button @click="setActivePage('show-students')" :class="[activePage === 'show-students' ? 'text-black' : 'bg-blue-600 text-white']">DATA DOPOK</menu-button>
             <span class="mx-1"></span>
             <menu-button @click="setActivePage('input-student')" :class="[activePage === 'input-student' ? 'text-black' : 'bg-blue-600 text-white']">INPUT DOPOK</menu-button>
