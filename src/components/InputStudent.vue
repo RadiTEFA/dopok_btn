@@ -22,8 +22,8 @@
             <warning-message v-if="isIMB" class="mt-1 text-sm text-red-600">{{ IMBMessage }}</warning-message>
         </div>
         <div class="mb-4">
-            <label class="block my-2 text-sm sm:text-base font-medium" placeholder="Pilih Penerima">PENERIMA</label>
-            <select :class="[isPenerima ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="penerima_id">
+            <label class="block my-2 text-sm sm:text-base font-medium">PENERIMA</label>
+            <select :class="[isPenerima ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="penerima_id" placeholder="Pilih Penerima">
                 <option v-for="penerima in penerimaOptions" :key="penerima.id" :value="penerima.id">{{ penerima.name }}</option>
             </select>
             <warning-message v-if="isPenerima" class="mt-1 text-sm text-red-600">{{ PenerimaMessage }}</warning-message>
