@@ -5,7 +5,7 @@
         <div class="block sm:hidden space-y-4">
             <div v-for="(student, index) in students" :key="student.sertipikat" class="border rounded-lg shadow-md p-4 bg-white">
                 <div class="flex justify-between items-center">
-                    <div class="font-semibold text-base">Dokumen #{{ index + 1 }}</div>
+                    <div class="font-semibold text-base">{{ student.name }}</div>
                     <button @click="toggleDetails(index)" class="text-blue-600 text-sm">
                         {{ expanded[index] ? 'Sembunyikan' : 'Tampilkan' }}
                     </button>
