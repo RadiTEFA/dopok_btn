@@ -1,6 +1,6 @@
 <template>
     <title-page>INPUT DOKUMEN</title-page>
-    <form @submit.prevent="submitStudent" class="border border-gray-200 w-full max-w-md mx-auto p-4 sm:p-6 rounded-lg shadow-md">
+    <form @submit.prevent="submitStudent" class="border border-gray-200 w-full max-w-md mx-auto p-4 sm:p-6 rounded-lg shadow-md m-5">
         <div class="mb-4">
             <label class="block my-2 text-sm sm:text-base font-medium">NAMA</label>
             <input type="text" :class="[isName ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="name" @input="name = name.toUpperCase()" placeholder="Masukan Nama">
@@ -8,22 +8,22 @@
         </div>
         <div class="mb-4">
             <label class="block my-2 text-sm sm:text-base font-medium">DEBITUR</label>
-            <input type="text" :class="[isDebitur ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="debitur" @input="debitur = debitur.toUpperCase()">
+            <input type="text" :class="[isDebitur ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="debitur" @input="debitur = debitur.toUpperCase()" placeholder="Masukan Debitur">
             <warning-message v-if="isDebitur" class="mt-1 text-sm text-red-600">{{ DebiturMessage }}</warning-message>
         </div>
         <div class="mb-4">
             <label class="block my-2 text-sm sm:text-base font-medium">SERTIPIKAT</label>
-            <input type="text" :class="[isSertipikat ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="sertipikat" @input="sertipikat = sertipikat.toUpperCase()">
+            <input type="text" :class="[isSertipikat ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="sertipikat" @input="sertipikat = sertipikat.toUpperCase()" placeholder="Masukan Sertipikat">
             <warning-message v-if="isSertipikat" class="mt-1 text-sm text-red-600">{{ SertipikatMessage }}</warning-message>
         </div>
         <div class="mb-4">
             <label class="block my-2 text-sm sm:text-base font-medium">IMB</label>
-            <input type="text" :class="[isIMB ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="imb" @input="imb = imb.toUpperCase()">
+            <input type="text" :class="[isIMB ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="imb" @input="imb = imb.toUpperCase()" placeholder="Masukan IMB">
             <warning-message v-if="isIMB" class="mt-1 text-sm text-red-600">{{ IMBMessage }}</warning-message>
         </div>
         <div class="mb-4">
             <label class="block my-2 text-sm sm:text-base font-medium">PENERIMA</label>
-            <select :class="[isPenerima ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="penerima_id">
+            <select :class="[isPenerima ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="penerima_id" placeholder="Pilih Penerima">
                 <option v-for="penerima in penerimaOptions" :key="penerima.id" :value="penerima.id">{{ penerima.name }}</option>
             </select>
             <warning-message v-if="isPenerima" class="mt-1 text-sm text-red-600">{{ PenerimaMessage }}</warning-message>
