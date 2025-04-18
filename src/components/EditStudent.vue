@@ -1,42 +1,42 @@
 <template>
     <title-page>EDIT DOKUMEN</title-page>
-    <form @submit.prevent="submitStudent" class="border w-1/2 mx-auto p-3 rounded shadow">
-        <div class="mb-3">
-            <label class="block my-1">NAMA</label>
-            <input type="text" disabled :class="[isName ? 'border-red-600' : 'border-gray-200']" class="border px-2 py-1 rounded shadow w-full" v-model="name">
-            <warning-message v-if="isName">{{ NameMessage }}</warning-message>
+    <form @submit.prevent="submitStudent" class="border border-gray-200 w-full max-w-md mx-auto p-4 sm:p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+            <label class="block my-2 text-sm sm:text-base font-medium">NAMA</label>
+            <input type="text" disabled :class="[isName ? 'border-red-600' : 'border-gray-200', 'bg-gray-100']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="name">
+            <warning-message v-if="isName" class="mt-1 text-sm text-red-600">{{ NameMessage }}</warning-message>
         </div>
-        <div class="mb-3">
-            <label class="block my-1">DEBITUR</label>
-            <input type="text" :class="[isDebitur ? 'border-red-600' : 'border-gray-200']" class="border px-2 py-1 rounded shadow w-full" v-model="debitur" @input="debitur = debitur.toUpperCase()">
-            <warning-message v-if="isDebitur">{{ DebiturMessage }}</warning-message>
+        <div class="mb-4">
+            <label class="block my-2 text-sm sm:text-base font-medium">DEBITUR</label>
+            <input type="text" :class="[isDebitur ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="debitur" @input="debitur = debitur.toUpperCase()">
+            <warning-message v-if="isDebitur" class="mt-1 text-sm text-red-600">{{ DebiturMessage }}</warning-message>
         </div>
-        <div class="mb-3">
-            <label class="block my-1">SERTIPIKAT</label>
-            <input type="text" :class="[isSertipikat ? 'border-red-600' : 'border-gray-200']" class="border px-2 py-1 rounded shadow w-full" v-model="sertipikat" @input="sertipikat = sertipikat.toUpperCase()">
-            <warning-message v-if="isSertipikat">{{ SertipikatMessage }}</warning-message>
+        <div class="mb-4">
+            <label class="block my-2 text-sm sm:text-base font-medium">SERTIPIKAT</label>
+            <input type="text" :class="[isSertipikat ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="sertipikat" @input="sertipikat = sertipikat.toUpperCase()">
+            <warning-message v-if="isSertipikat" class="mt-1 text-sm text-red-600">{{ SertipikatMessage }}</warning-message>
         </div>
-        <div class="mb-3">
-            <label class="block my-1">IMB</label>
-            <input type="text" :class="[isIMB ? 'border-red-600' : 'border-gray-200']" class="border px-2 py-1 rounded shadow w-full" v-model="imb" @input="imb = imb.toUpperCase()">
-            <warning-message v-if="isIMB">{{ IMBMessage }}</warning-message>
+        <div class="mb-4">
+            <label class="block my-2 text-sm sm:text-base font-medium">IMB</label>
+            <input type="text" :class="[isIMB ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="imb" @input="imb = imb.toUpperCase()">
+            <warning-message v-if="isIMB" class="mt-1 text-sm text-red-600">{{ IMBMessage }}</warning-message>
         </div>
-        <div class="mb-3">
-            <label class="block my-1">PENERIMA</label>
-            <select :class="[isPenerima ? 'border-red-600' : 'border-gray-200']" class="border px-2 py-2 rounded shadow w-full" v-model="penerima_id">
+        <div class="mb-4">
+            <label class="block my-2 text-sm sm:text-base font-medium">PENERIMA</label>
+            <select :class="[isPenerima ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="penerima_id">
                 <option v-for="penerima in penerimaOptions" :key="penerima.id" :value="penerima.id">{{ penerima.name }}</option>
             </select>
-            <warning-message v-if="isPenerima">{{ PenerimaMessage }}</warning-message>
+            <warning-message v-if="isPenerima" class="mt-1 text-sm text-red-600">{{ PenerimaMessage }}</warning-message>
         </div>
-        <blue-button>Simpan</blue-button>
+        <blue-button class="w-full py-3 text-base sm:w-auto sm:px-6 sm:py-2 min-h-[44px]">Simpan</blue-button>
     </form>
 
     <teleport to="body">
-        <confirm-dialog v-if="isConfirmDialog">
+        <confirm-dialog v-if="isConfirmDialog" class="sm:max-w-md mx-auto">
             <template v-slot:title>Informasi</template>
             <template v-slot:message>{{ message }}</template>
             <template v-slot:buttons>
-                <blue-button @click="closeConfirmDialog">Tutup</blue-button>
+                <blue-button @click="closeConfirmDialog" class="w-full py-3 text-base min-h-[44px]">Tutup</blue-button>
             </template>
         </confirm-dialog>
     </teleport>
@@ -69,7 +69,6 @@ export default {
     },
     methods: {
         submitStudent() {
-            // Validasi format
             if (!this.name.trim() || !this.name.match(/^[A-Z\s]+$/)) {
                 this.isName = true;
                 this.NameMessage = "Nama harus diisi dan hanya berisi huruf kapital";
@@ -114,8 +113,8 @@ export default {
 };
 </script>
 
-<style>
-body {
-  overflow-x: hidden;
+<style scoped>
+.border {
+    border: 1px solid #e5e7eb;
 }
 </style>
