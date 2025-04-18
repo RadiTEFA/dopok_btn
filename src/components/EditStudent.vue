@@ -28,7 +28,7 @@
             </select>
             <warning-message v-if="isPenerima" class="mt-1 text-sm text-red-600">{{ PenerimaMessage }}</warning-message>
         </div>
-        <blue-button class="w-full py-3 text-base sm:w-auto sm:px-6 sm:py-2 min-h-[44px]">Simpan</blue-button>
+        <blue-button class="w-full py-3 text-base sm:w-auto sm:px-6 sm:py-2 min-h-[44px]">UBAH</blue-button>
     </form>
 
     <teleport to="body">
