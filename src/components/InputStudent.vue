@@ -3,7 +3,7 @@
     <form @submit.prevent="submitStudent" class="border border-gray-200 w-full max-w-md mx-auto p-4 sm:p-6 rounded-lg shadow-md">
         <div class="mb-4">
             <label class="block my-2 text-sm sm:text-base font-medium">NAMA</label>
-            <input type="text" :class="[isName ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="name" @input="name = name.toUpperCase()">
+            <input type="text" :class="[isName ? 'border-red-600' : 'border-gray-200']" class="border px-4 py-3 rounded-lg shadow-sm w-full text-base sm:text-lg focus:ring-2 focus:ring-blue-500" v-model="name" @input="name = name.toUpperCase()" placeholder="Masukan Nama">
             <warning-message v-if="isName" class="mt-1 text-sm text-red-600">{{ NameMessage }}</warning-message>
         </div>
         <div class="mb-4">
